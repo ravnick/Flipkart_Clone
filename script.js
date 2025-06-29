@@ -83,3 +83,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(nextSlide, 4000);
 });
+
+
+
+// Fourth Container Button Scroller 
+
+function setupScroller(container) {
+    const scroller = container.querySelector('.scroller-images');
+    const leftBtn = container.querySelector('.scroll-left');
+    const rightBtn = container.querySelector('.scroll-right');
+    const itemWidth = 216;
+    const gap = 15;
+    const scrollAmount = itemWidth + gap;
+
+    function updateButtons() {
+        const scrollLeft = scroller.scrollLeft;
+        const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth;
+
+        leftBtn.style.display = scrollLeft > 10 ? 'block' : 'none';
+        rightBtn.style.display = scrollLeft < maxScrollLeft - 10 ? 'block' : 'none';
+    }
+
+    function scrollRight() {
+        scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    function scrollLeft() {
+        scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
+
+
+    leftBtn.addEventListener('click', scrollLeft);
+    rightBtn.addEventListener('click', scrollRight);
+
+    scroller.addEventListener('scroll', function () {
+        if (!this.scrollTimer) {
+            this.scrollTimer = setTimeout(() => {
+                updateButtons();
+                this.scrollTimer = null;
+            }, 100);
+        }
+    });
+
+
+    updateButtons();
+    window.addEventListener('resize', updateButtons);
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const containers = document.querySelectorAll('.fourth-container, .fifth-container');
+
+
+    containers.forEach(container => {
+        setupScroller(container);
+    });
+});
