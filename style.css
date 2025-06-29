@@ -1,0 +1,519 @@
+/* Universel Selecter  */
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", Arial, sans-serif;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* body of document  */
+body {
+    background-color: rgba(0, 68, 255, 0.07);
+    text-align: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* grid container  */
+/* .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+} */
+
+
+/* contaier one  header part */
+header {
+    padding: 12px 28px !important;
+    width: 100%;
+    background-color: white;
+}
+
+/* header .flex-boxHeader  */
+header .flex-boxHeader {
+    display: flex;
+    align-items: center;
+    margin-top: 1.7px;
+}
+
+/* short form to long form  */
+abbr {
+    cursor: pointer;
+}
+
+/* first-section */
+.first-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 56.66%;
+}
+
+/* second-section  */
+.second-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 41.5%;
+}
+
+/* flex-boxHeader search-bar  */
+.flex-boxHeader .search-bar {
+    display: flex;
+    align-items: center;
+    width: 71.4%;
+}
+
+/* search-bar search-i  */
+.search-bar .search-i {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 40px;
+    width: 9%;
+    cursor: pointer;
+    background-color: rgba(0, 68, 255, 0.07);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* search-bar fa-solid  */
+.search-bar .search-i .fa-solid {
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.46);
+    padding-right: 5px;
+}
+
+/* search-bar input  */
+.search-bar input {
+    font-size: 1.1rem;
+    border: none;
+    height: 40px;
+    width: 100%;
+    padding-left: 5px;
+    background-color: rgba(0, 68, 255, 0.07);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* search-bar input:focus  */
+.search-bar input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* flipkart logo  */
+.flex-boxHeader .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* flex-boxHeader .logo img  */
+.flex-boxHeader .logo img {
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* flex header all section  */
+.flex-boxHeader .login-section,
+.cart-section,
+.seller-section,
+.three-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 1.09rem;
+    color: rgba(0, 0, 0, 0.802);
+}
+
+
+/* flex header all section Imges  */
+.flex-boxHeader .seller-section img,
+.cart-section img,
+.three-column {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+/* flex-boxHeader login-section  */
+.flex-boxHeader .login-section {
+    width: 110px;
+    height: 41.333px;
+    border-radius: 8px;
+    margin: 0px 20px;
+}
+
+.login-section .fa-circle-user {
+    font-size: 1.3rem;
+}
+
+/* login-section fa-chevron-down  */
+.login-section .fa-chevron-down {
+    font-size: 0.7rem;
+    transition: transform 0.5s ease, color 0.3s ease;
+}
+
+/* login-section:hover fa-chevron-down  */
+.login-section:hover .fa-chevron-down {
+    transform: rotate(180deg);
+    color: white;
+}
+
+/* login-section:hover  */
+.login-section:hover {
+    background-color: rgb(26, 59, 251);
+    color: white;
+}
+
+/* set of login section Dropdown  */
+.login-section {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* login-section dorpdown menu  */
+.login-section .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 100;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.709);
+}
+
+/* login-section Hover  */
+.login-section:hover .dropdown-menu {
+    display: block;
+}
+
+/* login section dropdown menu section */
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* dropdown menu  */
+.dropdown-menu ul li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* dropdown menu top row section border set  */
+.dropdown-menu .top-row {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.258);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* anchor tag dorpdown menu  */
+.dropdown-menu .top-row a {
+    font-weight: bold;
+}
+
+/* Effect to show box */
+.threeDots button {
+    border-radius: 7px !important;
+    padding: 4px 6px !important;
+    border: 1px solid transparent;
+}
+
+/* button shadow none border trasnparent  */
+.threeDots button:hover,
+.threeDots button:focus {
+    box-shadow: none !important;
+    border: 1px solid transparent !important;
+}
+
+.threeDots:hover button {
+    border: 1px solid #00000095 !important;
+}
+
+/* dropdown menu arrow invisible  */
+.no-arrow::after {
+    display: none !important;
+}
+
+/* three dots image  */
+.threeDots img {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.dots li a {
+    font-size: 0.95rem !important;
+    color: rgba(0, 0, 0, 0.745) !important;
+}
+
+.dots li span {
+    padding-left: 15px;
+}
+
+/* button hover three dots  */
+.threeDots button:hover,
+.threeDots button:focus {
+    background-color: white !important;
+}
+
+/* toggle focus off  */
+.dropdown-toggle:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Container Second  */
+/* main section  */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* second container  */
+.second-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    width: 97.5%;
+    margin-top: 10px;
+    overflow-y: auto;
+}
+
+/* second container div customize  */
+.second-container div {
+    height: 141.333px;
+    width: 122px;
+    font-size: 0.9rem !important;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+/* second container all image height and width set  */
+.second-container img {
+    height: 64px;
+    width: 64px;
+}
+
+/* second container scimgs set cursor pointer  */
+.second-container .scimg-one,
+.scimg-two,
+.scimg-six,
+.scimg-seven {
+    cursor: pointer !important;
+}
+
+.scimg-one {
+    padding: 16px 16px;
+    padding-left: 24px !important;
+    width: 130px !important;
+}
+
+.scimg-two,
+.scimg-six {
+    padding: 16px 16px;
+}
+
+.scimg-seven {
+    width: 133.583px !important;
+    padding: 16px 16px;
+}
+
+.scimg-five {
+    width: 162.5px !important;
+}
+
+.scimg-eight {
+    width: 183.6px !important;
+}
+
+.scimg-nine {
+    width: 150.317px;
+}
+
+/* .second-container .scimg-five i,
+.scimg-eight i,
+.scimg-nine i {
+    margin-bottom: 10px; 
+
+}*/
+
+/* parents scimgs flex set  */
+.scimg-five-parent,
+.scimg-eight-parent,
+.scimg-nine-parent {
+    display: flex;
+    flex-direction: row !important;
+}
+
+/* second container scimgs i fa-solid  */
+.second-container .scimg-three i,
+.scimg-four i {
+    font-size: 0.8rem !important;
+    margin-left: 5px;
+}
+
+.scimg-five-parent i,
+.scimg-eight-parent i,
+.scimg-nine-parent i {
+    margin-bottom: -5rem !important;
+    font-size: 0.8rem !important;
+}
+
+/* paragragh padding set  */
+.second-container p {
+    padding-top: 10px;
+}
+
+.second-container .scimg-five p,
+.scimg-seven p,
+.scimg-eight p,
+.scimg-nine p {
+    margin-bottom: -6px !important;
+    line-height: 1.2;
+}
+
+/* login-section fa-chevron-down  */
+.second-container .fa-chevron-down {
+    font-size: 0.7rem;
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+
+/* login-section:hover fa-chevron-down  */
+.second-container div:hover .fa-chevron-down {
+    transform: rotate(-180deg);
+    color: rgb(32, 91, 255);
+}
+
+/* second container hover set scimgs  */
+.second-container .scimg-three:hover,
+.scimg-four:hover,
+.scimg-five:hover,
+.scimg-eight:hover,
+.scimg-nine:hover {
+    color: rgb(32, 91, 255);
+}
+
+.scimg-five,
+
+.scimg-nine {
+    width: 120px !important;
+}
+
+.scimg-eight {
+    width: 140px !important;
+}
+
+.scimg-five-parent {
+    width: 162.5px !important;
+}
+
+.scimg-eight-parent {
+    width: 183.6px !important;
+}
+
+.scimg-nine-parent {
+    width: 150.317px !important;
+}
+
+
+/* Container third  */
+/* Scroller Section  */
+.third-container {
+    width: 97.5%;
+    margin-top: 10px;
+}
+
+.scroller {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.scroller-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.scroller-img {
+    width: 100%;
+    flex-shrink: 0;
+    height: 207.017px;
+    object-fit: cover;
+}
+
+.scroller-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.scroller-btn.prev {
+    left: 10px;
+}
+
+.scroller-btn.next {
+    right: 10px;
+}
+
+
+/* Dots moving  */
+.scroller-indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    height: 10px;
+    width: 30px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #333;
+    width: 40px;
+}
