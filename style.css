@@ -477,35 +477,35 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 30px;
-    padding: 10px;
+    padding: 20px 10px;
     cursor: pointer;
     z-index: 10;
-    border-radius: 50%;
 }
 
 .scroller-btn.prev {
-    left: 10px;
+    left: 0px;
 }
 
 .scroller-btn.next {
-    right: 10px;
+    right: 0px;
 }
 
 
 /* Dots moving  */
 .scroller-indicators {
     text-align: center;
-    margin-top: 10px;
+    background-color: white;
+    padding-bottom: 6px;
 }
 
 .dot {
     display: inline-block;
-    height: 10px;
-    width: 30px;
+    height: 4px;
+    width: 14px;
     margin: 0 5px;
     background-color: #bbb;
     border-radius: 5px;
@@ -516,4 +516,81 @@ main {
 .dot.active {
     background-color: #333;
     width: 40px;
+}
+
+/* < !-- Fourth Container --> */
+.fourth-container {
+    width: 97.5%;
+    margin-top: 10px;
+    background-color: white;
+    padding: 0px 4px 12px 4px;
+}
+
+.headding-container {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: left;
+    padding: 16px 16px;
+    cursor: default;
+}
+
+.scroller-images {
+    display: flex;
+    overflow-x: auto;
+    overflow: auto;
+}
+
+.scroller-images .si {
+    display: flex;
+    flex-direction: column;
+    width: 216px !important;
+    height: 244px;
+}
+
+.scroller-images .sc-img {
+    width: 200px !important;
+    height: 228px !important;
+    padding: 12px 24px !important;
+}
+
+.scroller-images .sc-img img {
+    width: 156.56px !important;
+    height: 156.56px !important;
+}
+
+.fourth-container .si p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.fourth-container .si .top-p {
+    color: rgba(0, 0, 0, 0.684);
+    font-weight: 400;
+    padding-top: 12px;
+}
+
+.fifth-scroller .sc-img img {
+    width: 60px !important;
+    height: 156px !important;
+}
+
+.second-scroller .sc-img img {
+    width: 150px !important;
+    height: 130px !important;
+}
+
+.second-scroller .sc-img .img-height {
+    height: 156px !important;
+}
+
+.first-scroller .sc-img img {
+    width: 90px !important;
+    height: 156px !important;
+}
+
+.seventh-scroller .sc-img img {
+    width: 80px !important;
 }
