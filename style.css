@@ -471,6 +471,7 @@ main {
     flex-shrink: 0;
     height: 207.017px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .scroller-btn {
@@ -576,6 +577,10 @@ main {
 .scroller-images .sc-img img {
     width: 156.56px !important;
     height: 156.56px !important;
+}
+
+.sc-img {
+    cursor: pointer;
 }
 
 .si p {
@@ -704,6 +709,93 @@ main {
 .fifth-container .scroller-images .eaight-scroller img {
     width: 150px !important;
 }
+
+
+
+
+/* sixth container  */
+.container-sixth {
+    display: flex;
+    gap: 15px;
+    width: 97.5%;
+    margin-top: 10px;
+    padding: 0px 4px 12px 4px;
+    border-radius: 0% !important;
+}
+
+.category {
+    flex: 1;
+    background: #ffffff;
+    padding: 10px;
+}
+
+.category .hedding-arrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.category h2 {
+    font-size: 1.38rem;
+    font-weight: bold;
+    padding: 16px 0px 16px 16px;
+    text-align: left;
+}
+
+.category .hedding-arrow img {
+    width: 33px;
+    height: 30px;
+    border-radius: 50%;
+    margin-top: -5px;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item {
+    width: 48%;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ddddddd7;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 210px;
+    cursor: pointer;
+    /* optional - sab item same height ke dikh sake */
+}
+
+.item img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+}
+
+.item p {
+    margin: 15px 0 0;
+}
+
+.item span {
+    color: green;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Footer Section  */
