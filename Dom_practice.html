@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input[type="text"],
+    input[type="email"],
+    select {
+        padding: 10px;
+        width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus {
+        outline: none;
+        border-color: #0088ff;
+        box-shadow: 0 0 5px rgba(0, 136, 255, 0.5);
+    }
+
+    form {
+        background-color: #ffffffde;
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    select {
+        cursor: pointer;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #output button {
+        position: inherit;
+        left: 40px;
+        top: 30px;
+    }
+
+    #output {
+        position: absolute;
+        display: none;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        color: black;
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        padding: 50px 100px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        font-size: 18px;
+        line-height: 1.8;
+        text-align: left;
+        max-width: 400px;
+        transition: all 0.8s ease-in-out;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .close-btn {
+        background: linear-gradient(to top, rgb(255, 0, 225), rgb(255, 39, 39));
+        text-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
+        padding: 6px 11px;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .close-btn:hover {
+        background: linear-gradient(to top, rgb(255, 39, 39), rgb(255, 0, 225));
+        font-size: 18.5px;
+    }
+
+    #submit-btn {
+        background: linear-gradient(to top, rgb(225, 255, 0), rgb(47, 183, 1));
+        padding: 6px 11px;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #submit-btn:hover {
+        background: linear-gradient(to top, rgb(255, 248, 39), rgb(51, 255, 0));
+        font-size: 18.5px;
+        text-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
+    }
+    @media screen and (max-width: 600px) {
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 30px 20px;
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    .close-btn,
+    #submit-btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    body {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+</style>
+
+<body>
+
+    <h2>👤 Profile Form</h2>
+    <form id="userForm">
+        <input type="text" id="fullname" placeholder="Enter your name"><br><br>
+        <input type="email" id="email" placeholder="Enter your email"><br><br>
+
+
+        Gender:
+        <input type="radio" name="gender" id="male" value="Male"> Male
+        <input type="radio" name="gender" id="female" value="Female"> Female
+        <input type="radio" name="gender" id="other" value="Other"> Other
+        <br><br>
+
+        Theme:
+        <select id="themeSelector">
+            <option value="">-- Your Favoraite Theme --</option>
+            <option value="white">Light</option>
+            <option value="black">Black</option>
+            <option value="rgb(239, 0, 215)">Pink</option>
+            <option value="green">Green</option>
+        </select>
+        <div class="selected"></div>
+        <br><br>
+
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    <div id="output">
+        <!-- <button onclick="back()"><- Back</button> -->
+    </div>
+
+
+    <script>
+        const form = document.getElementById("userForm");
+        const fullname = document.getElementById("fullname");
+        const email = document.getElementById("email");
+        const output = document.getElementById("output");
+        const male = document.getElementById("male");
+        const female = document.getElementById("female");
+        const other = document.getElementById("other");
+        const themeSelector = document.getElementById("themeSelector");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            output.style.display = "flex";
+            output.innerHTML = '<button onclick="back()" class="close-btn">< Back</button>';
+
+            let fullName = fullname.value;
+            if (fullName === "") {
+                fullName = "Please Enter Your Name";
+            }
+
+            let emailValue = email.value;
+            if (!emailValue.includes("@") || !emailValue.includes(".")) {
+                emailValue = "Please Enter Correct Email Address";
+            }
+
+            let gender = "";
+            if (male.checked) {
+                gender = "You are Male";
+            } else if (female.checked) {
+                gender = "You are Female";
+            } else if (other.checked) {
+                gender = "Other";
+            } else {
+                gender = "Gender not selected";
+            }
+
+
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            // Theme secotion 
+            let theme = themeSelector.value;
+            if(theme === ""){
+                card.style.color="black";
+            }
+            else if (theme === "white") {
+                card.style.color = "black";
+            } else {
+                card.style.color = "white";
+            }
+
+            card.style.backgroundColor = theme;
+
+            card.innerHTML = `
+            <b>Your Name:</b> ${fullName}<br/>
+            <b>Your Email:</b> ${emailValue}<br/>
+            <b>Gender:</b> ${gender}
+        `;
+
+            output.appendChild(card);
+        });
+
+        function back() {
+            output.style.display = "none";
+        }
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
